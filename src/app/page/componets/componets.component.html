@@ -1,0 +1,62 @@
+ <div class="search">
+  <form #form="ngForm">
+    <input type="text" placeholder="Search City" name="city" >
+  </form>
+</div>
+
+<div class="container">
+  <div class="upper-data">
+    <img src="../assets/hot.jpg" *ngIf="WeatherData.isDay">
+    <img src="../assets/cold.jpg" *ngIf="!WeatherData.isDay" >
+
+    <div class="weather-data">
+      <div class="location">{{WeatherData.name}}</div>
+      <div class="temperature">{{WeatherData.temp_celcius}}°C</div>
+    </div>
+  </div>
+
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/min.png" >
+          <span>Min:</span>
+        </div>
+        <div class="info-block-value">
+            {{WeatherData.temp_min}}°C
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/max.png" >
+          <span>Max:</span>
+        </div>
+        <div class="info-block-value">
+           {{WeatherData.temp_max}}°C
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/humidity.png" >
+          <span>Humidity:</span>
+        </div>
+        <div class="info-block-value">
+            {{WeatherData.main.humidity}}%
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/wind.png" >
+          <span>Feels Like:</span>
+        </div>
+        <div class="info-block-value">
+            {{WeatherData.temp_feels_like}}°C
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
